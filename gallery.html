@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <title>Game Theory Machine Learning Lab @ IIT-Ropar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <script>
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+const lightbox = document.querySelector('.lightbox');
+const lightboxImage = document.querySelector('.lightbox img');
+const closeBtn = document.querySelector('.close-btn');
+
+galleryItems.forEach(item => {
+  item.addEventListener('click', () => {
+    lightboxImage.src = item.src;
+    lightbox.style.display = 'flex';
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+  </script>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <style>
+    .wrapper {
+        text-align: center;
+    }
+
+    .new_logo_des{
+      display: inline-block;
+      
+    }
+
+        .paper_links a {
+  color: #333;
+}
+
+.paper_links:hover a {
+  color: rgb(105,105,105);
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  padding: 20px;
+  
+}
+
+.gallery-item {
+  
+  position: relative;
+  overflow: hidden;
+  object-fit: contain;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  cursor: pointer;
+  object-fit: fill;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+</style>
+
+
+
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+  
+
+    <header class="site-navbar py-4 bg-white js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+          <div class="row align-items-center">
+
+              <div class="col-11 col-xl-2">
+                  <!--             <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">Create<span class="text-primary">.</span> </a></h1>
+--> <a class="mb-0 site-logo" href="index.html"><img class="new_logo_des" src="images/logo/logo.png"
+                          id="header-logo" class="img-fluid"></a>
+              </div>
+
+              <div class="col-12 col-md-10 d-none d-xl-block">
+
+                  <nav class="site-navigation position-relative text-right" role="navigation">
+
+                      <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                          <li>
+                              <a href="index.html" class="nav-link">Home</a>
+                          </li>
+                          <li>
+                              <a class="nav-link" href="research.html">Research</a>
+  
+                          </li>
+                          <li>
+                            <a class="nav-link" href="publication.html">Publications</a>
+
+                        </li>
+                        <li>
+                          <a class="nav-link" href="project.html">Projects</a>
+
+                      </li>
+                          <li class="has-children">
+                              <a href="team.html" class="nav-link">Our Team</a>
+                              <ul class="dropdown">
+                                  <li><a href="team.html#director-section">Dr Shweta Jain</a></li>
+                                  <li><a href="team.html#members-section">Phds</a></li>
+                                  <li><a href="team.html#mtech-section">Mtech</a></li>
+                                  <li><a href="team.html#btech-section">Btech</a></li>
+                                  <li><a href="team.html#collaborator-section">Collaborators</a></li>
+                              </ul>
+                          </li>
+
+                        
+
+                          <li>
+                              <a href="gallery.html" class="nav-link">Gallery</a>
+
+                          </li>
+
+                      </ul>
+                  </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;">
+                <a href="#" class="site-menu-toggle js-menu-toggle text-black">
+                    <span class="icon-menu h3">
+                    </span>
+                </a>
+            </div>
+
+          </div>
+      </div>
+
+  </header>
+
+
+  <div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="./images/Gallery/gallery_1.jpg" alt="Image 1">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/Gallery/gallery_2.jpg"  alt="Image 2">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/Gallery/gallery_3.jpg"  alt="Image 3">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/Gallery/gallery_4.jpg" alt="Image 1">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/Gallery/gallery_5.jpg"  alt="Image 2">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/Gallery/gallery_6.jpg"  alt="Image 3">
+      </div>   
+      <div class="gallery-item">
+        <img src="./images/Gallery/gallery_7.jpg" alt="Image 1">
+      </div>
+      <div class="gallery-item">
+        <img src="./images/Gallery/gallery_8.jpg"  alt="Image 2">
+      </div>
+    
+      <!-- Add more gallery items as needed -->
+    </div>
+    <div class="lightbox">
+      <img src="" alt="Lightbox Image">
+      <span class="close-btn">&times;</span>
+    </div>
+  </div>
+
+
+
+
+
+  
+
+
+    <footer class="site-footer">
+      <div class="container">
+
+            <div class="row">
+              <div class="col-lg-4 col-md-6">
+                <h2 class="footer-heading mb-4">Acknowledgment</h2>
+                <p style="text-align: justify;">Research at GTML lab is supported by the Department of Science & Technology (DST), Science and Engineering Board (SERB), Government of India. We also would like to acknowledge the Prime Minister Research Fellowship for supporting team members.</p>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <h4 class="text-light mb-4">Address</h4>
+                <p class="mb-2"><i class="fa fa-map-marker me-3"></i><a href="https://maps.app.goo.gl/CdnUvn7mw12fikbd9" target="_blank">Room 216, Department of Computer Science and Engineering, Ramanujan Block, Main Campus, IIT Ropar, Punjab, India. 140001.</a></p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i><a href="mailto:hmi@iiitd.ac.in">shwetajain@iitrpr.ac.in</a></p>
+          
+            </div>
+              <div class="col-lg-2 col-md-6">
+                <h2 class="footer-heading mb-4">Quick Links</h2>
+                <ul class="list-unstyled">
+                  <li><a href="publication.html">Publications</a></li>
+                  <li><a href="project.html">Projects</a></li>
+                  <li><a href="team.html">Team</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <h2 class="footer-heading mb-4">Follow Us</h2>
+                <a href="https://www.facebook.com/people/GTML/100095088440562/?mibextid=ZbWKwL"  target="_blank"><span class="icon-facebook"></span></a>
+                <a href="https://www.linkedin.com/company/game-theory-and-machine-learning-lab/" class="pl-3 pr-3" target="_blank"><span class="icon-linkedin"></span></a>
+              <br>
+                <br>
+                <a class="mb-0 site-logo "><img class="new_logo_des" src="images/logo/Logo_white_background.png" id="header-logo" class="img-fluid" height="125px" width="165px" style="border: 4px solid #000000;"></a>
+              </div>
+            </div>
+      </div>
+    </footer>
+  </div> 
+
+  <script src="js/jquery-3.3.1.min.html"></script>
+  <script src="js/jquery-migrate-3.0.1.min.html"></script>
+  <script src="js/jquery-ui.html"></script>
+  <script src="js/popper.min.html"></script>
+  <script src="js/bootstrap.min.html"></script>
+  <script src="js/owl.carousel.min.html"></script>
+  <script src="js/jquery.stellar.min.html"></script>
+  <script src="js/jquery.countdown.min.html"></script>
+  <script src="js/bootstrap-datepicker.min.html"></script>
+  <script src="js/jquery.easing.1.3.html"></script>
+  <script src="js/aos.html"></script>
+  <script src="js/jquery.fancybox.min.html"></script>
+  <script src="js/jquery.sticky.html"></script>
+
+  <script src="js/typed.html"></script>
+            <script>
+            var typed = new Typed('.typed-words', {
+            strings: ["Human Centered Computing","Humanoid Robots","Affective Computing","Interaction's"],
+            typeSpeed: 80,
+            backSpeed: 80,
+            backDelay: 4000,
+            startDelay: 1000,
+            loop: true,
+            showCursor: true
+            });
+            </script>
+
+  <script src="js/main.html"></script>
+
+
+
+  </body>
+</html>
