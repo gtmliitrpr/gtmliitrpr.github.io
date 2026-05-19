@@ -27,23 +27,6 @@
     <link rel="stylesheet" href="css/style.css">
 
   </head>
-  <script>
-    const galleryItems = document.querySelectorAll('.gallery-item img');
-const lightbox = document.querySelector('.lightbox');
-const lightboxImage = document.querySelector('.lightbox img');
-const closeBtn = document.querySelector('.close-btn');
-
-galleryItems.forEach(item => {
-  item.addEventListener('click', () => {
-    lightboxImage.src = item.src;
-    lightbox.style.display = 'flex';
-  });
-});
-
-closeBtn.addEventListener('click', () => {
-  lightbox.style.display = 'none';
-});
-  </script>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
     <style>
@@ -51,75 +34,225 @@ closeBtn.addEventListener('click', () => {
         text-align: center;
     }
 
-    .new_logo_des{
-      display: inline-block;
-      
+    .new_logo_des {
+        display: inline-block;
     }
 
-        .paper_links a {
-  color: #333;
-}
+    #header-logo {
+        height: 60px;
+        width: auto;
+    }
 
-.paper_links:hover a {
-  color: rgb(105,105,105);
-}
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px;
-  padding: 20px;
-  
-}
+    .gallery-page {
+        background: #fafafa;
+    }
 
-.gallery-item {
-  
-  position: relative;
-  overflow: hidden;
-  object-fit: contain;
-}
+    .gallery-hero {
+        padding: 90px 0 45px;
+        background: linear-gradient(135deg, #f7fffd 0%, #ffffff 55%, #f4fbff 100%);
+        text-align: center;
+        border-bottom: 1px solid #eeeeee;
+    }
 
-.gallery-item img {
-  width: 100%;
-  height: 250px;
-  cursor: pointer;
-  object-fit: fill;
-}
+    .gallery-hero h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #111;
+        margin-bottom: 12px;
+        letter-spacing: 0.4px;
+    }
 
-.gallery-item img:hover {
-  transform: scale(1.1);
-}
+    .gallery-hero h1::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: #32dbc6;
+        margin: 16px auto 0;
+        border-radius: 8px;
+    }
 
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
-}
+    .gallery-hero p {
+        max-width: 720px;
+        margin: 18px auto 0;
+        color: #555;
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
 
-.lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-}
+    .gallery-section {
+        padding: 55px 0 75px;
+    }
 
-.close-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 24px;
-  color: #fff;
-  cursor: pointer;
-}
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 26px;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        background: #ffffff;
+        box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 38px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 265px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.45s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.08);
+    }
+
+    .gallery-item::after {
+        content: "View Photo";
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.62);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 99999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.86);
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+    }
+
+    .lightbox.active {
+        display: flex;
+    }
+
+    .lightbox img {
+        max-width: 92%;
+        max-height: 84vh;
+        object-fit: contain;
+        border-radius: 14px;
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35);
+        background: #ffffff;
+    }
+
+    .close-btn {
+        position: fixed;
+        top: 22px;
+        right: 28px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #ffffff;
+        color: #111;
+        font-size: 30px;
+        line-height: 40px;
+        text-align: center;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.3s ease;
+    }
+
+    .close-btn:hover {
+        background: #32dbc6;
+        color: #ffffff;
+        transform: rotate(90deg);
+    }
+
+    @media (max-width: 768px) {
+        #header-logo {
+            height: 48px;
+        }
+
+        .gallery-hero {
+            padding: 70px 18px 35px;
+        }
+
+        .gallery-hero h1 {
+            font-size: 2.2rem;
+        }
+
+        .gallery-hero p {
+            font-size: 0.98rem;
+        }
+
+        .gallery-section {
+            padding: 38px 0 55px;
+        }
+
+        .gallery {
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .gallery-item img {
+            height: 220px;
+        }
+
+        .gallery-item::after {
+            opacity: 1;
+            transform: translateY(0);
+            font-size: 0.85rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .gallery-item img {
+            height: 230px;
+        }
+
+        .lightbox img {
+            max-width: 96%;
+            max-height: 78vh;
+        }
+
+        .close-btn {
+            top: 14px;
+            right: 16px;
+        }
+    }
 </style>
 
 
 
 
-  <div class="site-wrap">
+  <div class="site-wrap gallery-page">
 
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
@@ -139,7 +272,7 @@ closeBtn.addEventListener('click', () => {
 
               <div class="col-11 col-xl-2">
                   <!--             <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">Create<span class="text-primary">.</span> </a></h1>
---> <a class="mb-0 site-logo" href="index.html"><img class="new_logo_des" src="images/logo/logo.png"
+--> <a class="mb-0 site-logo" href="index.html"><img class="new_logo_des" src="images/logo/Logo_white_background.png"
                           id="header-logo" class="img-fluid"></a>
               </div>
 
@@ -197,63 +330,68 @@ closeBtn.addEventListener('click', () => {
   </header>
 
 
-    <div>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_1.jpg" alt="Image 1">
-        </div>
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_2.jpg"  alt="Image 2">
-        </div>
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_3.jpg"  alt="Image 3">
-        </div>
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_4.jpg" alt="Image 1">
-        </div>
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_5.jpg"  alt="Image 2">
-        </div>
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_6.jpg"  alt="Image 3">
-        </div>   
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_7.jpg" alt="Image 1">
-        </div>
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_8.jpg"  alt="Image 2">
-        </div>
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_9.jpg"  alt="Image 2">
-        </div>
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_10.jpg"  alt="Image 2">
-        </div>
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_11.jpg"  alt="Image 2">
-        </div>  
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_12.jpg"  alt="Image 2">
-        </div>  
-<div class="gallery-item">
-          <img src="./images/Gallery/gallery_13.jpg"  alt="Image 2">
-        </div>  
-        <div class="gallery-item">
-          <img src="./images/Gallery/gallery_14.jpg"  alt="Image 2">
-        </div>  
+    <section class="gallery-hero">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p>Moments from GTML Lab events, achievements, discussions, and research activities.</p>
+      </div>
+    </section>
 
+    <section class="gallery-section">
+      <div class="container">
+        <div class="gallery">
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_1.jpg" alt="GTML Lab Gallery Photo 1">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_2.jpg" alt="GTML Lab Gallery Photo 2">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_3.jpg" alt="GTML Lab Gallery Photo 3">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_4.jpg" alt="GTML Lab Gallery Photo 4">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_5.jpg" alt="GTML Lab Gallery Photo 5">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_6.jpg" alt="GTML Lab Gallery Photo 6">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_7.jpg" alt="GTML Lab Gallery Photo 7">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_8.jpg" alt="GTML Lab Gallery Photo 8">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_9.jpg" alt="GTML Lab Gallery Photo 9">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_10.jpg" alt="GTML Lab Gallery Photo 10">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_11.jpg" alt="GTML Lab Gallery Photo 11">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_12.jpg" alt="GTML Lab Gallery Photo 12">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_13.jpg" alt="GTML Lab Gallery Photo 13">
+              </div>
+              <div class="gallery-item">
+                <img src="./images/Gallery/gallery_14.jpg" alt="GTML Lab Gallery Photo 14">
+              </div>
+        </div>
+      </div>
+    </section>
 
-
-        
-        
-    
-      <!-- Add more gallery items as needed -->
+    <div class="lightbox" id="galleryLightbox">
+      <img src="" alt="Expanded Gallery Photo" id="lightboxImage">
+      <span class="close-btn" id="closeLightbox">&times;</span>
     </div>
-    <div class="lightbox">
-      <img src="" alt="Lightbox Image">
-      <span class="close-btn">&times;</span>
-    </div>
-  </div>
+
+
 
 
 
@@ -331,6 +469,41 @@ closeBtn.addEventListener('click', () => {
 
   <script src="js/main.html"></script>
 
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const galleryImages = document.querySelectorAll(".gallery-item img");
+      const lightbox = document.getElementById("galleryLightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const closeBtn = document.getElementById("closeLightbox");
+
+      galleryImages.forEach(function (img) {
+        img.addEventListener("click", function () {
+          lightboxImage.src = img.src;
+          lightbox.classList.add("active");
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove("active");
+        lightboxImage.src = "";
+      }
+
+      closeBtn.addEventListener("click", closeLightbox);
+
+      lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeLightbox();
+        }
+      });
+    });
+  </script>
 
 
   </body>

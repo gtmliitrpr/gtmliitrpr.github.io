@@ -1843,3 +1843,188 @@ h1, h2, h3, h4, h5,
   .post-meta a {
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+#header-logo {
+    height: 80px;
+    width: auto;
+}
+/* Recent News & Achievements Styling */
+
+.box-with-humber h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+}
+
+.box-with-humber h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #222;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.box-with-humber ul {
+    padding-left: 25px;
+}
+
+.box-with-humber ul li {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 14px;
+    color: #444;
+}
+
+.box-with-humber strong {
+    color: #000;
+    font-weight: 700;
+}
+
+.box-with-humber q {
+    font-style: italic;
+    color: #555;
+}
+.box-with-humber {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+.achievement-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #111;
+    margin-top: 35px;
+    margin-bottom: 18px;
+    padding-left: 14px;
+    border-left: 5px solid #32dbc6;
+    letter-spacing: 0.4px;
+    font-family: "Quicksand", sans-serif;
+}
+
+/* Team Page Modern Styling */
+
+
+
+
+
+
+
+/* Team Page Clean Responsive Cards */
+
+.person {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 25px 18px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    margin-bottom: 35px;
+    min-height: 0;
+}
+
+.person:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.13);
+}
+
+/* Only apply fixed image style to cards which actually have photos */
+.person img {
+    width: 190px !important;
+    height: 220px !important;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 16px !important;
+    margin-bottom: 18px;
+}
+
+/* Faculty images slightly larger */
+#director-section .person img {
+    width: 220px !important;
+    height: 260px !important;
+}
+
+/* Text-only cards should not become too tall */
+.person:not(:has(img)) {
+    padding: 25px 18px;
+    min-height: 150px;
+}
+
+/* Better spacing between rows */
+#members-section .row,
+#mtech-section .row,
+#btech-section .row {
+    row-gap: 35px;
+}
+
+.person h3,
+.person h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.person p {
+    font-size: 0.95rem;
+    color: #555 !important;
+    line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .person {
+        margin-bottom: 28px;
+        padding: 22px 15px;
+    }
+
+    .person img {
+        width: 170px !important;
+        height: 200px !important;
+    }
+
+    #director-section .person img {
+        width: 180px !important;
+        height: 210px !important;
+    }
+}/* Prevent footer from becoming boxed */
+
+.site-footer .person,
+.site-footer .box-with-humber {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+.faculty-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    aspect-ratio: 4 / 3;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+
+.gallery-item::after {
+    content: "View Photo";
+    pointer-events: none;
+}
