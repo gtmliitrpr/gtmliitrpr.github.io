@@ -2800,7 +2800,7 @@ a:hover {
   text-align: left !important;
   background-image: url("../images/Gallery/gallery_12.jpg") !important;
   background-size: cover !important;
-  background-position: center bottom !important;
+  background-position: center center !important;
   border-bottom: 0 !important;
   overflow: hidden;
 }
