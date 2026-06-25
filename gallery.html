@@ -268,9 +268,11 @@
           <div class="row align-items-center">
 
               <div class="col-11 col-xl-2">
-                  <!--             <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">Create<span class="text-primary">.</span> </a></h1>
---> <a class="mb-0 site-logo" href="index.html"><img class="new_logo_des" src="images/logo/Logo_white_background.png"
-                          id="header-logo" class="img-fluid"></a>
+                  <a class="mb-0 site-logo brand-lockup" href="index.html">
+                    <span class="brand-mark-shell"><img class="new_logo_des" src="images/logo/logo.png"
+                          id="header-logo" class="img-fluid" alt="GTML Lab Logo"></span>
+                    <span class="brand-wordmark"><strong>GTML Lab</strong><small>IIT Ropar</small></span>
+                  </a>
               </div>
 
               <div class="col-12 col-md-10 d-none d-xl-block">
@@ -330,6 +332,7 @@
 
     <section class="gallery-hero">
       <div class="container">
+        <p class="hero-kicker">Lab Life</p>
         <h1>Gallery</h1>
         <p>Moments from GTML Lab events, achievements, discussions, and research activities.</p>
       </div>
@@ -405,7 +408,7 @@
   
 
 
-    <footer class="site-footer">
+    <footer class="site-footer" id="site-footer">
       <div class="container">
 
             <div class="row">
@@ -429,11 +432,13 @@
               </div>
               <div class="col-lg-3 col-md-6">
                 <h2 class="footer-heading mb-4">Follow Us</h2>
-                <a href="https://www.facebook.com/people/GTML/100095088440562/?mibextid=ZbWKwL"  target="_blank"><span class="icon-facebook"></span></a>
-                <a href="https://www.linkedin.com/company/game-theory-and-machine-learning-lab/" class="pl-3 pr-3" target="_blank"><span class="icon-linkedin"></span></a>
-              <br>
-                <br>
-                <a class="mb-0 site-logo "><img class="new_logo_des" src="./images/logo/logo_footer.png" id="header-logo" class="img-fluid" height="125px" width="165px" style="border: 4px solid #000000;"></a>
+                <div class="footer-socials">
+                  <a href="https://www.facebook.com/people/GTML/100095088440562/?mibextid=ZbWKwL" target="_blank" aria-label="GTML Lab on Facebook"><span class="icon-facebook"></span></a>
+                  <a href="https://www.linkedin.com/company/game-theory-and-machine-learning-lab/" target="_blank" aria-label="GTML Lab on LinkedIn"><span class="icon-linkedin"></span></a>
+                </div>
+                <a class="footer-brand-card" href="index.html">
+                  <img class="new_logo_des" src="./images/logo/logo_footer.png" id="footer-logo" class="img-fluid" alt="GTML Lab">
+                </a>
               </div>
             </div>
             <center>
@@ -461,6 +466,7 @@
 
   <script src="js/typed.html"></script>
             <script>
+            if (document.querySelector('.typed-words') && typeof Typed !== "undefined") {
             var typed = new Typed('.typed-words', {
             strings: ["Human Centered Computing","Humanoid Robots","Affective Computing","Interaction's"],
             typeSpeed: 80,
@@ -470,9 +476,11 @@
             loop: true,
             showCursor: true
             });
+            }
             </script>
 
   <script src="js/main.html"></script>
+  <script src="js/future-lab.html"></script>
 
 
   <script>
